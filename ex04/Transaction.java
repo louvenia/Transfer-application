@@ -1,0 +1,77 @@
+package ex04;
+
+import java.util.UUID;
+
+public class Transaction {
+    private UUID identifier;
+    private User recipient;
+    private User sender;
+    private Category transferCategory;
+    private Integer transferAmount;
+    public enum Category {
+        DEBITS, CREDITS
+    }
+
+    public Transaction(User recipient, User sender, Category transferCategory, Integer transferAmount) {
+        setIdentifier(UUID.randomUUID());
+        setRecipient(recipient);
+        setSender(sender);
+        setTransferCategory(transferCategory);
+        setTransferAmount(transferAmount);
+    }
+
+    public UUID getIdentifier() {
+        return identifier;
+    }
+
+    public User getRecipient() {
+        return recipient;
+    }
+
+    public User getSender() {
+        return sender;
+    }
+
+    public Category getTransferCategory() {
+        return transferCategory;
+    }
+
+    public Integer getTransferAmount() {
+        return transferAmount;
+    }
+
+    public void setIdentifier(UUID identifier) {
+        this.identifier = identifier;
+    }
+
+    public void setRecipient(User recipient) {
+        this.recipient = recipient;
+    }
+
+    public void setSender(User sender) {
+        this.sender = sender;
+    }
+
+    public void setTransferCategory(Category transferCategory) {
+        this.transferCategory = transferCategory;
+    }
+
+    public void setTransferAmount(Integer transferAmount) {
+        if((transferCategory == Category.DEBITS && transferAmount > 0) ||
+                (transferCategory == Category.CREDITS && transferAmount < 0)) {
+            this.transferAmount = transferAmount;
+        } else {
+            System.err.println("The balance for the outgoing (negative amounts only) and incoming (positive amounts only) transactions");
+        }
+    }
+
+    public void printData() {
+        System.out.print("Transaction data: ");
+        System.out.print("{ ID: " + getIdentifier());
+        System.out.print(", Recipient: " + getRecipient().getName());
+        System.out.print(", Sender: " + getSender().getName());
+        System.out.print(", Category: " + getTransferCategory());
+        System.out.print(", Amount: " + getTransferAmount());
+        System.out.println(" }");
+    }
+}

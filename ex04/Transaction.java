@@ -65,13 +65,13 @@ public class Transaction {
         }
     }
 
-    public void printData() {
-        System.out.print("Transaction data: ");
-        System.out.print("{ ID: " + getIdentifier());
-        System.out.print(", Recipient: " + getRecipient().getName());
-        System.out.print(", Sender: " + getSender().getName());
-        System.out.print(", Category: " + getTransferCategory());
-        System.out.print(", Amount: " + getTransferAmount());
-        System.out.println(" }");
+    @Override
+    public String toString() {
+        return "[Transaction data: " +
+                "ID: " + getIdentifier() +
+                ", Recipient: " + getRecipient().getName() +
+                ", Sender: " + getSender().getName() +
+                ", Category: " + getTransferCategory() +
+                ", Amount: " + getTransferAmount() + "]";
     }
 }

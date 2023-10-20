@@ -23,14 +23,14 @@ public class UsersArrayList implements UserList {
                 return users[i];
             }
         }
-        throw new UserNotFoundException("User with this id was not found");
+        throw new UserNotFoundException("User with this id " + id + " was not found");
     }
 
     public User getUserIndex(Integer index) {
         if (index >= 0 && index <= number) {
             return users[index];
         }
-        throw new UserNotFoundException("User with this index was not found");
+        throw new UserNotFoundException("User with this index " + index + " was not found");
     }
 
     public Integer getNumberUsers() {

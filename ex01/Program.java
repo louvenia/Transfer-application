@@ -6,10 +6,11 @@ public class Program {
         User user2 = new User("Mike", 2000);
         User user3 = new User("Nastya", 3000);
 
-        user1.printData();
-        user2.printData();
-        user3.printData();
+        System.out.println(user1);
+        System.out.println(user2);
+        System.out.println(user3);
 
+        System.out.println();
         User user4 = new User("ERROR", -100);
     }
 }

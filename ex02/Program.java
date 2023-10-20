@@ -27,10 +27,11 @@ public class Program {
         list.addUser(user10);
         list.addUser(user11);
 
-        System.out.println("User ID from User class: " + user8 + " User ID from UsersArrayList class: " + list.getUserId(8));
-        System.out.println("User index 6: " + user7 + " User index from UsersArrayList class: " + list.getUserIndex(6));
+        System.out.println("User obtained using the method getUserId(8): " + list.getUserId(8));
+        System.out.println("User obtained using the method getUserIndex(6): " + list.getUserIndex(6));
         System.out.println("The number of users: " + list.getNumberUsers());
 
+        System.out.println();
         try {
             System.out.println(list.getUserId(12));
         } catch (UserNotFoundException error) {

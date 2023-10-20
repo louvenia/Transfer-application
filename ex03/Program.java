@@ -24,17 +24,19 @@ public class Program {
 
         System.out.println("View array after adding:");
         for(Transaction trans : transArray) {
-            trans.printData();
+            System.out.println(trans);
         }
 
         list.removeTransaction(trans2.getIdentifier());
         transArray = list.toArray();
 
+        System.out.println();
         System.out.println("Viewing the array after deleting the second transaction:");
         for(Transaction trans : transArray) {
-            trans.printData();
+            System.out.println(trans);
         }
 
+        System.out.println();
         try {
             list.removeTransaction(UUID.randomUUID());
         } catch (TransactionNotFoundException error) {

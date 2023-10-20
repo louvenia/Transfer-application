@@ -25,7 +25,7 @@ public class Program {
             System.out.print("\nTransactions of user ");
             System.out.println(service.getListUser().getUserId(i).getName());
             for(Transaction trans : service.retrievingTransfer(i)) {
-                trans.printData();
+                System.out.println(trans);
             }
         }
 
@@ -46,9 +46,10 @@ public class Program {
 
         System.out.println("\nCheck validity of transactions:");
         for(Transaction unpairTrans : service.validityTransactions()) {
-            unpairTrans.printData();
+            System.out.println(unpairTrans);
         }
 
+        System.out.println("\nOptions for transferring users with incorrect initial values:");
         service.perfomingTransaction(4, 3, 1000);
         service.perfomingTransaction(1,1, 100);
         service.perfomingTransaction(1, 2, 0);

@@ -41,11 +41,11 @@ public class User {
         }
     }
 
-    public void printData() {
-        System.out.println("User data:");
-        System.out.println("ID: " + getIdentifier());
-        System.out.println("Name: " + getName());
-        System.out.println("Balance: " + getBalance());
-        System.out.println();
+    @Override
+    public String toString() {
+        return "[User data: " +
+                "ID: " + getIdentifier() +
+                ", Name: " + getName() +
+                ", Balance: " + getBalance() + "]";
     }
 }

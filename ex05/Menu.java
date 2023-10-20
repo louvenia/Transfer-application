@@ -6,7 +6,7 @@ public class Menu {
     private final TransactionsService service = new TransactionsService();
     private final Scanner inputItem = new Scanner(System.in);
 
-    public void checkTransactions() {
+    private void checkTransactions() {
         for(Transaction trans : service.validityTransactions()) {
             System.out.print(trans.getRecipient().getName());
             System.out.print("(");
@@ -25,7 +25,7 @@ public class Menu {
         }
     }
 
-    public void removeTransfer() {
+    private void removeTransfer() {
         int userId = inputItem.nextInt();
         String transferId = inputItem.next();
         service.removeTransaction(userId, transferId);
@@ -54,7 +54,7 @@ public class Menu {
         }
     }
 
-    public void userTransactions() {
+    private void userTransactions() {
         int userId = inputItem.nextInt();
         for(Transaction trans : service.retrievingTransfer(userId)) {
             if(!trans.getRecipient().equals(service.getListUser().getUserId(userId))) {
@@ -78,31 +78,40 @@ public class Menu {
         }
     }
 
-    public void performTransfer() {
+    private void performTransfer() {
         int senderId = inputItem.nextInt();
         int recipientId = inputItem.nextInt();
         int amount = inputItem.nextInt();
         service.perfomingTransaction(recipientId, senderId, amount);
     }
 
-    public void viewBalance() {
+    private void viewBalance() {
         int userId = inputItem.nextInt();
         int balance = service.retrievingBalance(userId);
         System.out.print(service.getListUser().getUserId(userId).getName());
         System.out.println(" - " + balance);
     }
 
-    public void addUser() {
-        String userName = inputItem.next();
-        int balance = inputItem.nextInt();
-        service.addUser(userName, balance);
-        System.out.println("User with id = " + service.getListUser().getNumberUsers() + " is added");
+    private void addUser() {
+        System.out.println("Enter a user name and a balance");
+        String[] inputLine = inputItem.nextLine().split("\\s+");
+        try {
+            if(inputLine.length != 2) {
+                throw new RuntimeException("Invalid amount of data entered");
+            }
+            String userName = inputLine[0];
+            int balance = Integer.parseInt(inputLine[1]);
+            service.addUser(userName, balance);
+            System.out.println("User with id = " + service.getListUser().getNumberUsers() + " is added");
+        } catch(RuntimeException e) {
+            e.printStackTrace();
+            addUser();
+        }
     }
 
     public void chooseNumber(int number) {
         switch(number) {
             case(1):
-                System.out.println("Enter a user name and a balance");
                 addUser();
                 break;
             case(2):
@@ -132,6 +141,7 @@ public class Menu {
     }
 
     public void printInterface(String launch) {
+        System.out.println("-----------------------------------------------------------------");
         System.out.println("1. Add a user");
         System.out.println("2. View user balances");
         System.out.println("3. Perform a transfer");
@@ -143,5 +153,6 @@ public class Menu {
         } else {
             System.out.println("5. Finish execution");
         }
+        System.out.println("-----------------------------------------------------------------");
     }
 }

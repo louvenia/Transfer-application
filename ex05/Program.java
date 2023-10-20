@@ -11,14 +11,14 @@ public class Program {
             System.exit(-1);
         } else {
             String launch = args[0].replace("--profile=", "");
-            int numberPosition = 0;
+            int numberPosition;
             Menu menu = new Menu();
             menu.printInterface(launch);
             if(input.hasNextInt()) {
                 numberPosition = input.nextInt();
                 while((numberPosition != 7 && launch.equals("dev")) || (numberPosition != 5 && launch.equals("production"))) {
-                    menu.printInterface(launch);
                     menu.chooseNumber(numberPosition);
+                    menu.printInterface(launch);
                     numberPosition = input.nextInt();
                 }
             }

@@ -4,7 +4,7 @@ public class UserIdsGenerator {
     private static UserIdsGenerator userID;
     private static Integer identifier = 0;
 
-    public static synchronized UserIdsGenerator getInstance() {
+    public static UserIdsGenerator getInstance() {
         if(userID == null) {
             userID = new UserIdsGenerator();
         }

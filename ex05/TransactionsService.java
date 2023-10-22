@@ -1,7 +1,5 @@
 package ex05;
 
-import java.util.UUID;
-
 public class TransactionsService {
     private final UserList listUser = new UsersArrayList();
     private Integer countRemove = 0;

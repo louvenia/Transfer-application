@@ -6,6 +6,14 @@
 - Отладка кода воспроизводилась на Intellij IDEA CE.
 - Правила форматирования кода соответствуют общепринятым стандартам [Oracle](https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html).
 
+## Contents
+1. [Exercise 00](#exercise-00)
+2. [Exercise 01](#exercise-01)
+3. [Exercise 02](#exercise-02)
+4. [Exercise 03](#exercise-03)
+5. [Exercise 04](#exercise-04)
+6. [Exercise 05](#exercise-05)
+
 ### Introduction to exercises
 Задача проекта — автоматизировать бизнес-процесс, связанный с переводами определенных сумм между участниками нашей системы.
 
@@ -22,12 +30,9 @@ Mike -> John, +500, INCOME, transaction ID
 
 ### Exercise 00
 
-Exercise 00:||
----|---
-Turn-in directory |	ex00
-Files to turn-in |	User.java, Transaction.java, Program.java
-**User classes can be employed, along with:**
-Types (+ all methods of these types) |	Integer, String, UUID, enumerations
+- Программа расположена в директории: ex00;
+- Файл для сдачи: User.java, Transaction.java, Program.java;
+- Типы(+ все методы этого типа): Integer, String, UUID, enumerations.
 
 В данном упражнении реализованы базовые модели предметной области, а именно классы пользователей и транзакций.
 
@@ -50,11 +55,8 @@ Types (+ all methods of these types) |	Integer, String, UUID, enumerations
 
 ### Exercise 01
 
-Exercise 01:||
----|---
-Turn-in directory |	ex01
-Files to turn-in |	UserIdsGenerator.java, User.java, Program.java
-**All permissions from the previous exercise can be used**
+- Программа расположена в директории: ex01;
+- Файл для сдачи: UserIdsGenerator.java, User.java, Program.java.
 
 В этом упражнении был создан класс UserIdsGenerator. Поведение объекта этого класса определяет функционал генерации идентификаторов пользователей.
 
@@ -68,11 +70,8 @@ UserIdsGenerator написан по паттерну Singleton, так как �
 
 ### Exercise 02
 
-Exercise 02:||
----|---
-Turn-in directory	| ex02
-Files to turn-in |	UsersList.java, UsersArrayList.java, User.java,Program.java, etc.
-**All permissions from the previous exercise  + throw can be used.**
+- Программа расположена в директории: ex02;
+- Файл для сдачи: UsersList.java, UsersArrayList.java, User.java, Program.java, etc.
 
 В этом упражнении был реализован функционал для хранения пользователей во время работы программы.
 
@@ -93,11 +92,8 @@ Files to turn-in |	UsersList.java, UsersArrayList.java, User.java,Program.java, 
 
 ### Exercise 03
 
-Exercise 03:||
----|---
-Turn-in directory |	ex03
-Files to turn-in | TransactionsList.java, TransactionsLinkedList.java, User.java, Program.java, etc.
-**All permissions from the previous exercise can be used**
+- Программа расположена в директории: ex03;
+- Файл для сдачи: TransactionsList.java, TransactionsLinkedList.java, User.java, Program.java, etc.
 
 В отличие от пользователей, список транзакций требует особого подхода к реализации. Поскольку количество операций создания транзакций может быть очень большим, нам нужен метод хранения, чтобы избежать дорогостоящего увеличения размера массива.
 
@@ -114,11 +110,8 @@ Files to turn-in | TransactionsList.java, TransactionsLinkedList.java, User.java
 
 ### Exercise 04
 
-Exercise 04:||
----|---
-Turn-in directory |	ex04
-Files to turn-in |	TransactionsService.java, Program.java, etc.
-**All permissions from the previous exercise can be used**
+- Программа расположена в директории: ex04;
+- Файл для сдачи: TransactionsService.java, Program.java, etc.
 
 В этом упражнении создан класс TransactionsService на основе паттерна Фасад, способного инкапсулировать поведение нескольких классов. С функционалом:
 
@@ -135,11 +128,8 @@ Files to turn-in |	TransactionsService.java, Program.java, etc.
 
 ### Exercise 05
 
-Exercise 05:||
----|---
-Turn-in directory |	ex05
-Files to turn-in |	Menu.java, Program.java, etc.
-**All permissions from the previous exercise can be used, as well as try/catch**
+- Программа расположена в директории: ex05;
+- Файл для сдачи: Menu.java, Program.java, etc.
 
 В результате получается работающее приложение с консолью. Функциональность меню реализована в соответствующем классе с полем ссылки на TransactionsService.
 
